@@ -101,7 +101,8 @@ const moveMap = [
     },
 ]
 
-function getAllStraightLineMoves(moves, x, y, xInc, yInc, board, teams, selfId, maxRange = 22){
+// changed maxRange from 22 to 8 so that bots can't snipe people
+function getAllStraightLineMoves(moves, x, y, xInc, yInc, board, teams, selfId, maxRange = 8){
     let curX = x + xInc;
     let curY = y + yInc;
     for(let i = 0; i < maxRange; i++){
