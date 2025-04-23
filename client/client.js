@@ -262,14 +262,14 @@ function render() {
         camera.x = interpolate(camera.x, -(interpSquare[0] * squareSize + squareSize / 2), 0.1 * d);
         camera.y = interpolate(camera.y, -(interpSquare[1] * squareSize + squareSize / 2), 0.1 * d);
     } else {
-        let xv = input.left - input.right;
+        let xv = (input.left - input.right) * 3;
         if(xv !== 0){
             if(input.shift) xv *= 3;
             camera.x += xv * dt;
             changed = true;
         }
     
-        let yv = input.up - input.down;
+        let yv = (input.up - input.down) * 3;
         if(yv !== 0){
             if(input.shift) yv *= 3;
             camera.y += yv * dt;
